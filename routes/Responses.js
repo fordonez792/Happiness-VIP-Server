@@ -122,7 +122,7 @@ router.post("/export", authenticateToken, async (req, res) => {
 
       const filePath = path.join(`survey-data.csv`);
 
-      fs.writeFile(filePath, csv, (error) => {
+      fs.writeFile(filePath, csv, { encoding: "utf8" }, (error) => {
         if (error) {
           console.error(error);
           return res
