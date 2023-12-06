@@ -89,6 +89,26 @@ router.get("/get-count", authenticateToken, async (req, res) => {
   });
 });
 
+router.get("/get-results", async (req, res) => {
+  Responses.find({}, { _id: 1, positive: 1, negative: 1 })
+    .then((allResponses) => {
+      if (allResponses) {
+        res.json({
+          status: "SUCCESS",
+          allResponses,
+        });
+      }
+    })
+    .catch((error) => {
+      console.log(error);
+      res.json({
+        status: "FAILED",
+        message:
+          "Some error occured while fetching all positive and negative results",
+      });
+    });
+});
+
 router.post("/export", authenticateToken, async (req, res) => {
   Responses.find({}, { _id: 0, __v: 0 })
     .then((allResponses) => {
