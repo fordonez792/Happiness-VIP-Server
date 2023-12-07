@@ -136,6 +136,8 @@ router.post("/export", authenticateToken, async (req, res) => {
         "question19",
         "question20",
         "question21",
+        "positive",
+        "negative",
         "time",
       ];
       const csv = parse(allResponses, { fields });
