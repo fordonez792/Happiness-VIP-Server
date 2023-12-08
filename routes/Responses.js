@@ -61,8 +61,9 @@ router.post("/create", async (req, res) => {
       question19: parseInt(responses["19"]),
       question20: parseInt(responses["20"]),
       question21: parseInt(responses["21"]),
-      positive,
-      negative,
+      question22: parseInt(responses["22"]),
+      positive: positive.toFixed(1),
+      negative: negative.toFixed(1),
     });
     await newResponse.save();
 
@@ -136,6 +137,7 @@ router.post("/export", authenticateToken, async (req, res) => {
         "question19",
         "question20",
         "question21",
+        "question22",
         "positive",
         "negative",
         "time",

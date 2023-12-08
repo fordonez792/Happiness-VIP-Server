@@ -92,6 +92,10 @@ const ResponsesSchema = new mongoose.Schema({
     type: Number,
     required: true,
   },
+  question22: {
+    type: Number,
+    required: true,
+  },
   positive: {
     type: Number,
     required: true,
