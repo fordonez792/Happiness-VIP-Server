@@ -64,38 +64,6 @@ const ResponsesSchema = new mongoose.Schema({
     type: Number,
     required: true,
   },
-  question15: {
-    type: Number,
-    required: true,
-  },
-  question16: {
-    type: Number,
-    required: true,
-  },
-  question17: {
-    type: Number,
-    required: true,
-  },
-  question18: {
-    type: Number,
-    required: true,
-  },
-  question19: {
-    type: Number,
-    required: true,
-  },
-  question20: {
-    type: Number,
-    required: true,
-  },
-  question21: {
-    type: Number,
-    required: true,
-  },
-  question22: {
-    type: Number,
-    required: true,
-  },
   positive: {
     type: Number,
     required: true,
