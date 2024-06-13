@@ -4,6 +4,9 @@ const ResponsesSchema = new mongoose.Schema({
   email: {
     type: String,
   },
+  activityName: {
+    type: String,
+  },
   activities: {
     type: [String],
     required: true,
@@ -57,10 +60,6 @@ const ResponsesSchema = new mongoose.Schema({
     required: true,
   },
   question13: {
-    type: Number,
-    required: true,
-  },
-  question14: {
     type: Number,
     required: true,
   },

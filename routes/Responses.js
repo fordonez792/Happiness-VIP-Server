@@ -39,6 +39,7 @@ router.post("/create", async (req, res) => {
 
     const newResponse = new Responses({
       email,
+      activityName: responses["14"],
       activities: activitiesSelected,
       question1: parseInt(responses["1"]),
       question2: parseInt(responses["2"]),
@@ -53,7 +54,6 @@ router.post("/create", async (req, res) => {
       question11: parseInt(responses["11"]),
       question12: parseInt(responses["12"]),
       question13: parseInt(responses["13"]),
-      question14: parseInt(responses["14"]),
       positive: positive.toFixed(1),
       negative: negative.toFixed(1),
     });
@@ -107,6 +107,7 @@ router.post("/export", authenticateToken, async (req, res) => {
     .then((allResponses) => {
       const fields = [
         "email",
+        "activityName",
         "activities",
         "question1",
         "question2",
@@ -121,7 +122,6 @@ router.post("/export", authenticateToken, async (req, res) => {
         "question11",
         "question12",
         "question13",
-        "question14",
         "positive",
         "negative",
         "time",
