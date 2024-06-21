@@ -6,6 +6,11 @@ const ResponsesSchema = new mongoose.Schema({
   },
   activityName: {
     type: String,
+    required: true,
+  },
+  satisfactionLevel: {
+    type: Number,
+    required: true,
   },
   activities: {
     type: [String],

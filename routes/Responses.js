@@ -9,7 +9,7 @@ const { authenticateToken } = require("../middleware/AuthMiddleware");
 const router = express.Router();
 
 router.post("/create", async (req, res) => {
-  const { email, activitiesSelected, responses } = req.body;
+  const { email, activityName, activitiesSelected, responses } = req.body;
   let response;
 
   try {
@@ -39,7 +39,8 @@ router.post("/create", async (req, res) => {
 
     const newResponse = new Responses({
       email,
-      activityName: responses["14"],
+      activityName,
+      satisfactionLevel: parseInt(responses["14"]),
       activities: activitiesSelected,
       question1: parseInt(responses["1"]),
       question2: parseInt(responses["2"]),
@@ -108,6 +109,7 @@ router.post("/export", authenticateToken, async (req, res) => {
       const fields = [
         "email",
         "activityName",
+        "satisfactionLevel",
         "activities",
         "question1",
         "question2",
